@@ -1,7 +1,0 @@
-C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\SpaceAppTask1\SpaceAppTask1\obj\Debug\SpaceAppTask1.csproj.CoreCompileInputs.cache
-C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\SpaceAppTask1\SpaceAppTask1\bin\Debug\SpaceAppTask1.exe.config
-C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\SpaceAppTask1\SpaceAppTask1\bin\Debug\SpaceAppTask1.exe
-C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\SpaceAppTask1\SpaceAppTask1\bin\Debug\SpaceAppTask1.pdb
-C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\SpaceAppTask1\SpaceAppTask1\obj\Debug\SpaceAppTask1.exe
-C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\SpaceAppTask1\SpaceAppTask1\obj\Debug\SpaceAppTask1.pdb
-C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\SpaceAppTask1\SpaceAppTask1\obj\Debug\SpaceAppTask1.csproj.AssemblyReference.cache

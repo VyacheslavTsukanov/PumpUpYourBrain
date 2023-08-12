@@ -1,6 +1,0 @@
-C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\LayoutPrototype\LayoutPrototype\bin\Debug\LayoutPrototype.exe.config
-C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\LayoutPrototype\LayoutPrototype\bin\Debug\LayoutPrototype.exe
-C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\LayoutPrototype\LayoutPrototype\bin\Debug\LayoutPrototype.pdb
-C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\LayoutPrototype\LayoutPrototype\obj\Debug\LayoutPrototype.csproj.CoreCompileInputs.cache
-C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\LayoutPrototype\LayoutPrototype\obj\Debug\LayoutPrototype.exe
-C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\LayoutPrototype\LayoutPrototype\obj\Debug\LayoutPrototype.pdb
