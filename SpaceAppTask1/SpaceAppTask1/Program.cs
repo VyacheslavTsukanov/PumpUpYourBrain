@@ -5,10 +5,11 @@ namespace SpaceAppTask1
 {
     class Program
     {
-        
-        static void Main(string[] args)
-        {           
 
+        static void Main(string[] args)
+        {
+
+            // 2001. A+B
             /*
              * Заданы a и b. Выведите a+b.
              * Входные данные
@@ -18,7 +19,7 @@ namespace SpaceAppTask1
              * 
              * Выведите a+b.  
              */
-            // 2001. A+B
+
 
 
             //int a = 13;
@@ -40,6 +41,8 @@ namespace SpaceAppTask1
             //Console.WriteLine(a+b);
             /////////////////////////////////////////////////////////////////////////
 
+
+            // 2002. Сумма чисел
             /* 
              * Задано n целых чисел. Выведите их сумму.
 
@@ -50,8 +53,6 @@ namespace SpaceAppTask1
                 Выходные данные
                 Выведите искомую сумму.
             */
-            // 2002. Сумма чисел
-
 
             //int sum = 0;
             //int n = 1234;
@@ -238,8 +239,8 @@ namespace SpaceAppTask1
 
 
               Входные данные
-              В первой строке записана пара целых чисел n, w (1 ≤ n ≤ 10000, 1 ≤ w ≤ 10000). Вторая строка содержит 
-              последовательность целых чисел a1, a2,..., an (1 ≤ ai ≤ 10000).
+              В первой строке записана пара целых чисел n, w (1 ≤ n ≤ 10000, 1 ≤ w ≤ 10000). 
+              Вторая строка содержит последовательность целых чисел a1, a2,..., an (1 ≤ ai ≤ 10000).
 
 
               Выходные данные
@@ -247,9 +248,32 @@ namespace SpaceAppTask1
              
              */
 
+            int w;
+            int n;
+            Console.WriteLine("Введите сколько тонн: ");
+            w = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите грузоподъемность: ");
+            n = int.Parse(Console.ReadLine());
 
+            for (int i = w; i <= 1000; i++)
+            {
+                if (w <= 1000)
+                {
+                    Console.WriteLine("Тонн " + w * i);
+                }
+            }
 
-            Console.WriteLine();
+            Console.WriteLine("Превышает тонны");
+
+            for (int j = n; j <= 1000; j++)
+            {
+                if (n <= 1000)
+                {
+                    Console.WriteLine("Грузоподъемность " + n * j);
+                }
+            }
+            Console.WriteLine("Превышает грузоподъемность");
+
 
             Console.ReadLine();
         }
