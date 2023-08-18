@@ -319,26 +319,56 @@ namespace SpaceAppTask1
              * 
              */
 
-            int m, n, nod;
-            m = Convert.ToInt32(Console.ReadLine());
-            n = Convert.ToInt32(Console.ReadLine());
+            //int m, n, nod;
+            //m = convert.toint32(console.readline());
+            //n = convert.toint32(console.readline());
 
-            while (m != n)
+            //while (m != n)
+            //{
+            //    if (m > n)
+            //    {
+            //        m = m - n;
+            //    }
+            //    else
+            //    {
+            //        n = n - m;
+            //    }
+            //}
+
+            //nod = n;
+            //console.writeline("нод: " + nod);
+
+
+            // 2011. Анализ возраста
+
+            /*
+             * Задан возраст человека — число n. Ваша задача написать программу, которая классифицирует человека по его возрасту.
+             *   Если это число меньше 7, то обычно это означает, что задан дошкольник и надо вывести "preschool child".
+             *   Если это число от 7 до 17, то обычно это означает, что задан школьник и надо вывести "schoolchild m", где m — это его предполагаемый класс (число от 1 до 11, считайте, что учатся в школе с 7 лет, класс меняется раз в год).
+             *   Если это число от 18 до 22, то обычно это означает, что задан студент и надо вывести "student m", где m — это его предполагаемый курс (число от 1 до 5, считайте, что учатся в университете с 18 лет, курс меняется раз в год).
+             *   Если это число больше 22, то выведите "specialist", что означает квалификацию "специалист".
+             *
+             */
+
+            int age;
+            age = Convert.ToInt32(Console.ReadLine());
+
+            if(age <= 7)
             {
-                if (m > n)
-                {
-                    m = m - n;
-                }
-                else
-                {
-                    n = n - m;
-                }
+                Console.WriteLine("preschool child");
             }
+            else if ((age > 7) && (age <= 17))
+            {
+                Console.WriteLine("schoolchild " + age);
+            }
+            else if ((age > 18) && (age <= 22))
+            {
+                Console.WriteLine("specialist " + age);
+            }
+            else
+                Console.WriteLine("Вы ввели не то число!!!");
 
-            nod = n;
-            Console.WriteLine("НОД: " + nod);
-
-
+            
 
 
             Console.ReadLine();
