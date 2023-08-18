@@ -248,31 +248,56 @@ namespace SpaceAppTask1
              
              */
 
-            int w;
-            int n;
-            Console.WriteLine("Введите сколько тонн: ");
-            w = int.Parse(Console.ReadLine());
-            Console.WriteLine("Введите грузоподъемность: ");
-            n = int.Parse(Console.ReadLine());
+            //int w;
+            //int n;
+            //Console.WriteLine("Введите сколько тонн: ");
+            //w = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Введите грузоподъемность: ");
+            //n = int.Parse(Console.ReadLine());
 
-            for (int i = w; i <= 1000; i++)
-            {
-                if (w <= 1000)
-                {
-                    Console.WriteLine("Тонн " + w * i);
-                }
-            }
+            //for (int i = w; i <= 1000; i++)
+            //{
+            //    if (w <= 1000)
+            //    {
+            //        Console.WriteLine("Тонн " + w * i);
+            //    }
+            //}
 
-            Console.WriteLine("Превышает тонны");
+            //Console.WriteLine("Превышает тонны");
 
-            for (int j = n; j <= 1000; j++)
-            {
-                if (n <= 1000)
-                {
-                    Console.WriteLine("Грузоподъемность " + n * j);
-                }
-            }
-            Console.WriteLine("Превышает грузоподъемность");
+            //for (int j = n; j <= 1000; j++)
+            //{
+            //    if (n <= 1000)
+            //    {
+            //        Console.WriteLine("Грузоподъемность " + n * j);
+            //    }
+            //}
+            //Console.WriteLine("Превышает грузоподъемность");
+
+
+
+            // 2009. Сумма на степенях двоек
+
+            /*
+                Задана последовательность n целых чисел a1, a2,..., an. 
+                Выведите сумму всех ее элементов, стоящих на позициях, которые являются степенями двойки: 1, 2, 4, 8, 16 и т.д.
+
+
+                Входные данные
+                В первой строке задано целое число n (1 ≤ n ≤ 10000). 
+                Вторая строка содержит последовательность целых чисел a1, a2,..., an.
+
+
+                Выходные данные
+                Выведите искомую сумму.
+             
+             */
+            
+            int summ;
+            Console.WriteLine("Введите число: ");
+            summ = int.Parse(Console.ReadLine());
+            Console.WriteLine("Число " + summ + " в степени 2 = " + (summ * 2));
+
 
 
             Console.ReadLine();
