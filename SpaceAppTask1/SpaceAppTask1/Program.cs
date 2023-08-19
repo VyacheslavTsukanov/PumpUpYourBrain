@@ -9,6 +9,9 @@ namespace SpaceAppTask1
         static void Main(string[] args)
         {
 
+            #region Тест 1-10
+
+
             // 2001. A+B
             /*
              * Заданы a и b. Выведите a+b.
@@ -338,6 +341,7 @@ namespace SpaceAppTask1
             //nod = n;
             //console.writeline("нод: " + nod);
 
+            #endregion
 
             // 2011. Анализ возраста
 
@@ -350,25 +354,63 @@ namespace SpaceAppTask1
              *
              */
 
-            int age;
-            age = Convert.ToInt32(Console.ReadLine());
+            //int age;
+            //age = Convert.ToInt32(Console.ReadLine());
 
-            if(age <= 7)
+            //if(age <= 7)
+            //{
+            //    Console.WriteLine("preschool child");
+            //}
+            //else if ((age > 7) && (age <= 17))
+            //{
+            //    Console.WriteLine("schoolchild " + age);
+            //}
+            //else if ((age > 18) && (age <= 22))
+            //{
+            //    Console.WriteLine("specialist " + age);
+            //}
+            //else
+            //    Console.WriteLine("Вы ввели не то число!!!");
+
+
+            // 2012. Разрезание квадрата
+
+            /*
+             *   Верно ли, что два заданных прямоугольника a1 x b1 и a2 x b2 были получены разрезанием некоторого квадрата одним прямолинейным разрезом? 
+             *   Напишите программу, которая выведет YES или NO.
+             *
+             *   Входные данные
+             *   В первой строке заданы числа целые a1, b1 (1 ≤ a1,b1 ≤ 1000), во второй — числа целые a2, b2 (1 ≤ a2,b2 ≤ 1000). Числа в строках заданы через пробел.
+             *
+             *
+             *   Выходные данные
+             *   Выведите YES или NO.
+             * 
+             */
+
+            // Ввод размеров прямоугольников
+            Console.WriteLine("Введите размеры первого прямоугольника:");
+            string[] input1 = Console.ReadLine().Split(' ');
+            int a1 = int.Parse(input1[0]);
+            int b1 = int.Parse(input1[1]);
+
+            Console.WriteLine("Введите размеры второго прямоугольника:");
+            string[] input2 = Console.ReadLine().Split(' ');
+            int a2 = int.Parse(input2[0]);
+            int b2 = int.Parse(input2[1]);
+
+            // Проверка условия разрезания прямолинейным разрезом
+            if ((a1 == a2 && b1 + b2 == a1) || (b1 == b2 && a1 + a2 == b1))
             {
-                Console.WriteLine("preschool child");
-            }
-            else if ((age > 7) && (age <= 17))
-            {
-                Console.WriteLine("schoolchild " + age);
-            }
-            else if ((age > 18) && (age <= 22))
-            {
-                Console.WriteLine("specialist " + age);
+                Console.WriteLine("YES");
             }
             else
-                Console.WriteLine("Вы ввели не то число!!!");
+            {
+                Console.WriteLine("NO");
+            }
 
-            
+
+
 
 
             Console.ReadLine();
