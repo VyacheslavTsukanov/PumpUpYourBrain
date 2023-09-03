@@ -1,15 +1,83 @@
 ﻿using System;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace SpaceAppTask1
 {
     class Program
     {
 
+        static string FindRhymeWord(string query, string[] dictionary)
+        {
+            string rhymeWord = "";
+            int maxRhymeLength = 0;
+
+            foreach (string word in dictionary)
+            {
+                int rhymeLength = GetRhymeLength(query, word);
+                if (rhymeLength > maxRhymeLength)
+                {
+                    maxRhymeLength = rhymeLength;
+                    rhymeWord = word;
+                }
+            }
+
+            return rhymeWord;
+        }
+
+        static int GetRhymeLength(string word1, string word2)
+        {
+            int length1 = word1.Length;
+            int length2 = word2.Length;
+            int maxLength = Math.Min(length1, length2);
+
+            int rhymeLength = 0;
+            for (int i = 1; i <= maxLength; i++)
+            {
+                if (word1[length1 - i] == word2[length2 - i])
+                {
+                    rhymeLength++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            return rhymeLength;
+        }
+
+        public static bool IsPrime(int number)
+        {
+            if (number < 2)
+                return false;
+
+            for (int i = 2; i <= Math.Sqrt(number); i++)
+            {
+                if (number % i == 0)
+                    return false;
+            }
+
+            return true;
+        }
+
+        static int CountDivisors(int num)
+        {
+            int count = 0;
+            for (int i = 1; i <= num; i++)
+            {
+                if (num % i == 0)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+
         static void Main(string[] args)
         {
 
-            #region Тест 1-10
+            #region Тест 1-10 Ветвления, циклы.
 
 
             // 2001. A+B
@@ -343,6 +411,9 @@ namespace SpaceAppTask1
 
             #endregion
 
+            #region Тест 11-20 Ветвления, циклы.
+
+
             // 2011. Анализ возраста
 
             /*
@@ -389,25 +460,382 @@ namespace SpaceAppTask1
              */
 
             // Ввод размеров прямоугольников
-            Console.WriteLine("Введите размеры первого прямоугольника:");
-            string[] input1 = Console.ReadLine().Split(' ');
-            int a1 = int.Parse(input1[0]);
-            int b1 = int.Parse(input1[1]);
+            //Console.WriteLine("Введите размеры первого прямоугольника:");
+            //string[] input1 = Console.ReadLine().Split(' ');
+            //int a1 = int.Parse(input1[0]);
+            //int b1 = int.Parse(input1[1]);
 
-            Console.WriteLine("Введите размеры второго прямоугольника:");
-            string[] input2 = Console.ReadLine().Split(' ');
-            int a2 = int.Parse(input2[0]);
-            int b2 = int.Parse(input2[1]);
+            //Console.WriteLine("Введите размеры второго прямоугольника:");
+            //string[] input2 = Console.ReadLine().Split(' ');
+            //int a2 = int.Parse(input2[0]);
+            //int b2 = int.Parse(input2[1]);
 
-            // Проверка условия разрезания прямолинейным разрезом
-            if ((a1 == a2 && b1 + b2 == a1) || (b1 == b2 && a1 + a2 == b1))
+            //// Проверка условия разрезания прямолинейным разрезом
+            //if ((a1 == a2 && b1 + b2 == a1) || (b1 == b2 && a1 + a2 == b1))
+            //{
+            //    Console.WriteLine("YES");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("NO");
+            //}
+
+
+            /*   2013. Количество минимумов
+             * 
+             *   Задана последовательность n целых чисел a1, a2,..., an. Выведите количество ее элементов, равных минимальному.
+             *
+             *
+             *   Входные данные
+             *   В первой строке записано целое число n (1 ≤ n ≤ 10000). Вторая строка содержит последовательность n целых чисел a1, a2,..., an (-10000 ≤ ai ≤ 10000).
+             *
+             *
+             *   Выходные данные
+             *   Выведите искомое количество минимумов.
+             *   
+             */
+
+
+
+            //int n = int.Parse(Console.ReadLine());
+            //int[] sequence = new int[n];
+
+            //string[] input = Console.ReadLine().Split(' ');
+            //for (int i = 0; i < n; i++)
+            //{
+            //    sequence[i] = int.Parse(input[i]);
+            //}
+
+            //int min = sequence[0];
+            //int count = 0;
+
+            //for (int i = 0; i < n; i++)
+            //{
+            //    if (sequence[i] < min)
+            //    {
+            //        min = sequence[i];
+            //        count = 1;
+            //    }
+            //    else if (sequence[i] == min)
+            //    {
+            //        count++;
+            //    }
+            //}
+
+            //Console.WriteLine(count);
+
+
+
+
+            /*
+             * 2014. Алгоритм Евклида
+             * 
+             * Наибольшим общим делителем (НОД) для двух целых чисел m и n называется наибольший из их общих делителей. 
+             * Например, для чисел 70 и 105 наибольший общий делитель равен 35.
+             * 
+             * С давних времен известен следующий алгоритм нахождения наибольшего общего делителя двух неотрицательных целых чисел: 
+             * пока оба числа строго положительны надо из большего числа вычесть меньшее. Результатом работы (наибольшим общим делителем) 
+             * является большее число после окончания описанной серии вычитаний или 0, если оба числа в конце равны 0.
+             * 
+             * Вам заданы целые неотрицательные a и b (0 ≤ a,b ≤ 109). Напишите программу, 
+             * которая выведет количество вычитаний при работе такого алгоритма и результат его работы.
+             * 
+             * Входные данные
+             * Единственная строка входных данных содержит записанные через пробел целые числа a, b (0 ≤ a,b ≤ 109).
+             * 
+             * Выходные данные
+             * Выведите количество вычитаний в ходе работы алгоритма и его результат через пробел.
+             */
+
+
+            //int m, n, nod;
+            //m = Convert.ToInt32(Console.ReadLine());
+            //n = Convert.ToInt32(Console.ReadLine());
+
+            //while (m != n)
+            //{
+            //    if (m > n)
+            //    {
+            //        m = m - n;
+            //    }
+            //    else
+            //    {
+            //        n = n - m;
+            //    }
+            //}
+
+
+
+
+            /*
+             * 2015. Простые на отрезке [1, n] (простой вариант)
+             * Простое число — это натуральное число, которое имеет ровно два различных натуральных делителя: единицу и самого себя. 
+             * Последовательность простых чисел начинается так: 2, 3, 5, 7, 11, 13, 17, 19, 23,...
+             * 
+             * Напишите программу, которая выведет все простые числа на отрезке [1,n] в порядке возрастания.
+             * 
+             * Входные данные
+             * В единственной строке входных данных записано целое число n (1 ≤ n ≤ 10000).
+             * 
+             * Выходные данные
+             * Выведите все простые числа на отрезке [1,n] по возрастанию по одному в строке.
+             */
+
+            //int n = 1;
+            //int count = 0;
+
+            //while (count < 10)
+            //{
+            //    if (IsPrime(n))
+            //    {
+            //        Console.WriteLine(n);
+            //        count++;
+            //    }
+
+            //    n++;
+            //}
+
+
+
+
+            /*
+             * 2016. Количество корней уравнения
+             * 
+             * Задано уравнение вида Ax^2+Bx+C=0. В этом уравнении каждый коэффициент может принимать любое значение от -100 до 100, включительно. 
+             * Такое уравнение может иметь 0, 1, 2 или даже бесконечное количество различных корней.
+             * 
+             * Напишите программу, которая выведет количество корней этого уравнения.
+             * 
+             * Входные данные
+             * Единственная строка входных данных содержит целые числа A, B, C (-100 ≤ A,B,C ≤ 100).
+             * 
+             * Выходные данные
+             * Выведите количество корней или число -1, если уравнение имеет бесконечное количество корней.
+             * 
+             */
+
+
+            //string[] input = Console.ReadLine().Split();
+            //int A = int.Parse(input[0]);
+            //int B = int.Parse(input[1]);
+            //int C = int.Parse(input[2]);
+
+            //if (A == 0)
+            //{
+            //    if (B == 0)
+            //    {
+            //        if (C == 0)
+            //        {
+            //            Console.WriteLine(-1); // бесконечное количество корней
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine(0); // нет корней
+            //        }
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine(1); // один корень
+            //    }
+            //}
+            //else
+            //{
+            //    int discriminant = B * B - 4 * A * C;
+
+            //    if (discriminant > 0)
+            //    {
+            //        Console.WriteLine(2); // два корня
+            //    }
+            //    else if (discriminant == 0)
+            //    {
+            //        Console.WriteLine(1); // один корень
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine(0); // нет корней
+            //    }
+            //}
+
+
+
+            /*
+             * 2017. Числа с наибольшим количеством делителей
+             * 
+             * Вам задана пара целых чисел a, b (1 ≤ a ≤ b ≤ 5000). Выведите все числа из отрезка [a,b], которые имеют наибольшее количество делителей из всех чисел в этом отрезке.
+             * 
+             * Входные данные
+             * В единственной строке входных данных заданы числа a, b (1 ≤ a ≤ b ≤ 5000).
+             * 
+             * Выходные данные
+             * В первую строку выведите количество найденных чисел. Во вторую строку выведите сами числа, числа разделяйте запятыми (без каких-либо пробелов). 
+             * Запятую после последнего числа выводить не надо (см. примеры).
+             * 
+             */
+
+            //int a = 1;
+            //int b = 5000;
+
+            //int maxDivisors = 0;
+            //for (int i = a; i <= b; i++)
+            //{
+            //    int divisors = CountDivisors(i);
+            //    if (divisors > maxDivisors)
+            //    {
+            //        maxDivisors = divisors;
+            //    }
+            //}
+
+            //for (int i = a; i <= b; i++)
+            //{
+            //    int divisors = CountDivisors(i);
+            //    if (divisors == maxDivisors)
+            //    {
+            //        Console.WriteLine(i);
+            //    }
+            //}
+
+
+
+
+            /*
+             * 2018. Хитрая сумма чисел
+             * 
+             * Задана последовательность n чисел a1, a2,..., an. Для нее вычисляется "хитрая" сумма: s=+a1-a2-a3+a4+a5+a6-a7-a8-a9-a10+..., т.е. знаки плюс и минус чередуются блоками, длина i-го блока равна i.
+             * 
+             * Выведите "хитрую" сумму заданной последовательности.
+             * 
+             * Входные данные
+             * В первой строке задано целое число n (1 ≤ n ≤ 10000). Далее во второй строке задана последовательность a1, a2,..., an (1 ≤ ai ≤ 10000).
+             * 
+             * Выходные данные
+             * Выведите "хитрую" сумму заданной последовательности.
+             * 
+             */
+
+            //int[] sequence = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            //int sum = 0;
+            //bool isPositive = true;
+            //int blockLength = 1;
+            //for (int i = 0; i < sequence.Length; i++)
+            //{
+            //    if (isPositive)
+            //    {
+            //        sum += sequence[i];
+            //    }
+            //    else
+            //    {
+            //        sum -= sequence[i];
+            //    }
+
+            //    blockLength--;
+            //    if (blockLength == 0)
+            //    {
+            //        isPositive = !isPositive;
+            //        blockLength = i + 2;
+            //    }
+            //}
+
+            //Console.WriteLine(sum);
+
+
+
+            /*
+             * 2019. Треугольная полка
+             * 
+             * Книжная полка имеет треугольную форму: на ее верхней полке помещается одна книга, на второй — две, на третьей — три и т.д. (на i-ой помещается i книг).
+             * 
+             * Все книги занумерованы по полкам сверху вниз, а на одной полке — слева направо. То есть единственная книга на верхней полке имеет номер 1, на второй полке — книги 2 и 3, а на третьей — 4, 5 и 6.
+             * 
+             * Задан номер книги n, необходимо вывести номер полки, на которой она находится.
+             * 
+             * Входные данные
+             * В единственной строке входных данных записано целое число n (1 ≤ n ≤ 108).
+             * 
+             * Выходные данные
+             * Выведите номер полки, на которой находится книга с номером n.
+             * 
+             */
+
+
+            //int shelves = 5; // количество полок
+            //int bookNumber = 10; // номер книги
+
+            //int currentShelf = 1; // текущая полка
+            //int booksOnShelf = 1; // количество книг на текущей полке
+
+            //while (bookNumber > booksOnShelf)
+            //{
+            //    currentShelf++;
+            //    booksOnShelf += currentShelf;
+            //}
+
+            //int positionOnShelf = bookNumber - (booksOnShelf - currentShelf);
+
+            //Console.WriteLine("Книга с номером {0} находится на полке {1}, позиция {2}", bookNumber, currentShelf, positionOnShelf);
+
+
+            /*
+             * 2020. Наиболее частое значение
+             * 
+             * Задана последовательность a1, a2,..., an, которая отсортирована по неубыванию. Выведите наиболее часто встречающееся в ней значение и количество его появлений в последовательности.
+             * 
+             * Входные данные
+             * В первой строке задано целое число n (1 ≤ n ≤ 10000). Вторая строка содержит n целых чисел, каждое от 1 до 10000 включительно. Заданная последовательность отсортирована по неубыванию.
+             * 
+             * Выходные данные
+             * Выведите два целых числа f, c (числа разделяйте пробелом), где f — значение наиболее часто встречающегося элемента последовательности и c — количество его появлений. 
+             * Если существует несколько возможных значений для f, то выведите наименьшее из них.
+             * 
+             */
+
+            int[] sequence = { 1, 2, 2, 3, 3, 3, 4, 4, 4, 4 }; // заданная последовательность
+
+            Dictionary<int, int> frequency = new Dictionary<int, int>();
+
+            foreach (int num in sequence)
             {
-                Console.WriteLine("YES");
+                if (frequency.ContainsKey(num))
+                {
+                    frequency[num]++;
+                }
+                else
+                {
+                    frequency[num] = 1;
+                }
             }
-            else
-            {
-                Console.WriteLine("NO");
-            }
+
+            int mostFrequentNumber = frequency.OrderByDescending(x => x.Value).First().Key;
+            int frequencyCount = frequency[mostFrequentNumber];
+
+            Console.WriteLine("Наиболее часто встречающееся число: {0}", mostFrequentNumber);
+            Console.WriteLine("Количество его появлений: {0}", frequencyCount);
+
+
+            #endregion
+
+
+
+            //int n = int.Parse(Console.ReadLine());
+            //string[] dictionary = new string[n];
+            //for (int i = 0; i < n; i++)
+            //{
+            //    dictionary[i] = Console.ReadLine();
+            //}
+
+            //int q = int.Parse(Console.ReadLine());
+            //string[] queries = new string[q];
+            //for (int i = 0; i < q; i++)
+            //{
+            //    queries[i] = Console.ReadLine();
+            //}
+
+            //for (int i = 0; i < q; i++)
+            //{
+            //    string query = queries[i];
+            //    string rhymeWord = FindRhymeWord(query, dictionary);
+            //    Console.WriteLine(rhymeWord);
+            //}
 
 
 

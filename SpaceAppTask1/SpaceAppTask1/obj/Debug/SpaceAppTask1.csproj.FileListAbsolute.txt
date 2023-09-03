@@ -12,3 +12,8 @@ C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\PumpUpYourBrain\SpaceA
 C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\PumpUpYourBrain\SpaceAppTask1\SpaceAppTask1\bin\Debug\SpaceAppTask1.exe.config
 C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\PumpUpYourBrain\SpaceAppTask1\SpaceAppTask1\bin\Debug\SpaceAppTask1.exe
 C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\PumpUpYourBrain\SpaceAppTask1\SpaceAppTask1\bin\Debug\SpaceAppTask1.pdb
+C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\PumpUpYourBrain\SpaceAppTask1\SpaceAppTask1\bin\Debug\MathNet.Numerics.dll
+C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\PumpUpYourBrain\SpaceAppTask1\SpaceAppTask1\bin\Debug\System.ValueTuple.dll
+C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\PumpUpYourBrain\SpaceAppTask1\SpaceAppTask1\bin\Debug\MathNet.Numerics.xml
+C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\PumpUpYourBrain\SpaceAppTask1\SpaceAppTask1\bin\Debug\System.ValueTuple.xml
+C:\Users\vtsuk\OneDrive\Рабочий стол\Proj - C#\PumpUpYourBrain\SpaceAppTask1\SpaceAppTask1\obj\Debug\SpaceAppTask1.csproj.CopyComplete
